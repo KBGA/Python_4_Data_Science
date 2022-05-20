@@ -8,15 +8,22 @@ print(pd.__version__)
 url = 'https://raw.githubusercontent.com/edlich/eternalrepo/master/DS-WAHLFACH/countries.csv'
 
 #Load the data into a Pandas DataFrame
-countrydata = pd.read_csv(url, index_col=0)
+countrydata = pd.read_csv(url)
 
-print(countrydata)
+#Display the second row
+print(countrydata.loc[1])
+
+
+
+print("Huhu")
+
 
 print(pd.options.display.max_rows)
 
-print(countrydata.head(2))
+print("\n\n" , countrydata.head(2))
 
-print(countrydata.info())
+#Showing the last 4 rows
+
 
 #print(countrydata.loc[0])
 #print(countrydata[:3])
