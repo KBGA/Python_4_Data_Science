@@ -13,15 +13,11 @@ countrydata = pd.read_csv(url)
 #Display the second row
 print("\n\n", countrydata.loc[1])
 
-
 print("\n\n", countrydata.Currency)
 
+print("\n\n", countrydata.Currency.to_string(index=False))
 
-
-print("Huhu")
-
-
-print(pd.options.display.max_rows)
+print("\n\n", pd.options.display.max_rows)
 
 print("\n\n" , countrydata.head(2))
 
