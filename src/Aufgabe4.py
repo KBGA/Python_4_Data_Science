@@ -11,7 +11,10 @@ url = 'https://raw.githubusercontent.com/edlich/eternalrepo/master/DS-WAHLFACH/c
 countrydata = pd.read_csv(url)
 
 #Display the second row
-print(countrydata.loc[1])
+print("\n\n", countrydata.loc[1])
+
+
+print("\n\n", countrydata.Currency)
 
 
 
