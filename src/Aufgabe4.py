@@ -28,4 +28,13 @@ print("\n\nHere are the last four rows:\n", last4rows)
 print("\n\nHier sind alle Zeilen die Euro als Währung verwenden:\n", countrydata.loc[countrydata['Currency'] == "EUR"])
 
 # Showing only name and Currency in a new data frame
-print("\n\nHier werden nur Namen und Währungen angezeigt:\n")
+print("\n\nHier werden nur Namen und Währungen angezeigt:")
+print(countrydata[['Name', 'Currency']])
+
+# Showing only the rows/countries that have more than 2000 BIP (it is in Milliarden USD Bruttoinlandsprodukt)
+print("\n\nHier werden nur Länder anzegeit, die mehr als 2000 Milliarden USD BIP haben:")
+print(countrydata.loc[countrydata['BIP'].values > 2000])
+
+# Selecting all countries with inhabitants between 50 and 150 Mio
+print("\n\nHier werden nur Länder angezeigt, die zwischen 50 und 150 Millionen Einwohner haben:")
+print(countrydata.loc[(countrydata['People'].values > 50000000) & (countrydata['People'].values < 150000000)])
