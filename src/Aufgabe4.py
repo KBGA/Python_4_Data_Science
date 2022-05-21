@@ -43,3 +43,21 @@ print(countrydata.loc[(countrydata['People'].values > 50000000) & (countrydata['
 print("\n\nHier wurde BIP in Bip geändert")
 countrydata = countrydata.rename(columns={'BIP': 'Bip'})
 print(countrydata)
+
+# Calculating the Bip sum
+print("\n\nHier wird die Summe der BIP berechnet:")
+print("Die berechnete Summe ist: ", countrydata['Bip'].sum())
+
+# Calculating the average people of all countries
+print("\n\nHier wird der Mittelwert der Bevölkerung berechnet:")
+print("Der Mittelwert ist: ", countrydata['People'].mean())
+
+# Sorting by name alphabetically
+print("\n\nHier werden die Länder alphabetisch sortiert:")
+print(countrydata.sort_values(by='Name'))
+
+# countrydatasort= countrydata.reindex(countrydata.sort_values(by='Name'))
+countrydatasort= countrydata.sort_values(by='Name').reset_index()
+print(countrydatasort)
+del countrydatasort["index"]
+print(countrydatasort)
