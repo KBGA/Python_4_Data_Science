@@ -1,4 +1,4 @@
-import numpy
+import numpy as np
 import pandas as pd
 
 print(pd.__version__)
@@ -56,8 +56,20 @@ print("Der Mittelwert ist: ", countrydata['People'].mean())
 print("\n\nHier werden die Länder alphabetisch sortiert:")
 print(countrydata.sort_values(by='Name'))
 
-# countrydatasort= countrydata.reindex(countrydata.sort_values(by='Name'))
+print("\n\nHier werden die Namen alphabetisch sortiert und neue Indexen werden vergeben:")
 countrydatasort= countrydata.sort_values(by='Name').reset_index()
 print(countrydatasort)
+
+print("\n\nHier werden die alten Indexen gelöscht und die neu sortierte liste angezeigt:")
 del countrydatasort["index"]
 print(countrydatasort)
+
+
+# Create a new data frame from the original where the area is changed as follows: all countries with > 1000000 get BIG
+# and <= 1000000 get SMALL in the cell replaced!
+print("\n\nBIG and SMALL")
+newcountrydata = countrydata
+newcountrydata.loc[newcountrydata['Area'] > 1000000, 'Area'] = 'BIG'
+
+newcountrydata['Area'] = np.where(((newcountrydata['Area'] > 1000000)|(newcountrydata['Area'] <= 1000000)))
+print(newcountrydata)
