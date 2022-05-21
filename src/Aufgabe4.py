@@ -38,3 +38,8 @@ print(countrydata.loc[countrydata['BIP'].values > 2000])
 # Selecting all countries with inhabitants between 50 and 150 Mio
 print("\n\nHier werden nur Länder angezeigt, die zwischen 50 und 150 Millionen Einwohner haben:")
 print(countrydata.loc[(countrydata['People'].values > 50000000) & (countrydata['People'].values < 150000000)])
+
+# Change BIP to Bip
+print("\n\nHier wurde BIP in Bip geändert")
+countrydata = countrydata.rename(columns={'BIP': 'Bip'})
+print(countrydata)
